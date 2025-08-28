@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+
 
 const services = [
   {
@@ -166,17 +168,36 @@ export default function Portfolio() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormStatus('sending');
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus('sent');
-      setFormData({ name: '', email: '', project: '', message: '' });
-      setTimeout(() => setFormStatus(''), 3000);
-    }, 1000);
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setFormStatus("sending");
+
+  try {
+    const res = await emailjs.send(
+      "service_cdc45yb",       // ✅ Your Service ID
+      "template_6cglnyj",      // ✅ Your Template ID
+      {
+        name: formData.name,
+        email: formData.email,
+        project: formData.project,
+        message: formData.message,
+      },
+      "-cLiasRf_BVKRCsrm"      // ✅ Your Public Key
+    );
+
+    if (res.status === 200) {
+      setFormStatus("sent");
+      setFormData({ name: "", email: "", project: "", message: "" });
+      setTimeout(() => setFormStatus(""), 3000);
+    } else {
+      setFormStatus("error");
+    }
+  } catch (error) {
+    console.error("EmailJS error:", error);
+    setFormStatus("error");
+  }
+};
+
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
