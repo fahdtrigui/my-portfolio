@@ -134,12 +134,13 @@ export default function Portfolio() {
               </a>
               {/* Download CV button */}
               <a
-                href="/CV_Fahd_Trigui.pdf"
-                download
-                className="rounded-xl bg-green-600 text-white px-5 py-3 text-sm hover:bg-green-700"
-              >
-                Download CV
-              </a>
+                  href={`${import.meta.env.BASE_URL}CV_Fahd_Trigui.pdf`}
+                  download
+                  className="rounded-xl bg-green-600 text-white px-5 py-3 text-sm hover:bg-green-700"
+                >
+                  Télécharger CV
+                </a>
+
             </div>
             <div className="mt-6 text-sm text-zinc-500">
               Base a Sfax, Tunisie · Disponible a distance
