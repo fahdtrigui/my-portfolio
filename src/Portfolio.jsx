@@ -1,66 +1,72 @@
 import React from "react";
 
+/* ---------- DATA ---------- */
+
 const services = [
   {
-    title: "Sites Web & Apps",
-    desc: "Conception de sites vitrines, e-commerce et apps web performantes.",
+    title: "Websites & Apps",
+    desc:
+      "Design and build modern showcase sites, e-commerce, or lightweight web apps.",
     bullets: [
-      "WordPress / WooCommerce ou Django selon le besoin",
-      "Design moderne, responsive, SEO de base",
-      "Mise en ligne + formulaires de contact + securite de base",
+      "WordPress / WooCommerce or Django (as needed)",
+      "Modern, responsive design + basic SEO",
+      "Deploy + contact forms + baseline security",
     ],
   },
   {
-    title: "Tableaux de bord & Data",
-    desc: "KPIs, reporting automatique et data pipelines.",
+    title: "Dashboards & Data",
+    desc:
+      "KPIs, automated reporting, and data pipelines tailored to your business.",
     bullets: [
       "Power BI / SQL / ETL (SSIS)",
-      "Datawarehouse (modele en etoile)",
-      "Automatisation des rapports",
+      "Data warehouse (star schema)",
+      "Automated reports and refresh",
     ],
   },
   {
-    title: "Cybersecurite (Starter)",
-    desc: "Securisation de site et sensibilisation basique.",
+    title: "Cybersecurity (Starter)",
+    desc:
+      "Hardening and awareness basics for small teams and websites.",
     bullets: [
-      "Durcissement WordPress (HTTPS/SSL, sauvegardes)",
-      "Scan de surface + recommandations",
-      "Conseils anti-phishing pour l'equipe",
+      "WordPress hardening (HTTPS/SSL, backups)",
+      "Surface scans + practical recommendations",
+      "Anti-phishing tips for staff",
     ],
   },
   {
-    title: "IA appliquee",
-    desc: "Modeles de classification/prediction pour cas simples.",
+    title: "Applied AI",
+    desc:
+      "Simple, value-oriented ML prototypes for classification or prediction.",
     bullets: [
       "XGBoost / Random Forest / LSTM",
-      "Pretraitement & feature engineering",
-      "PoC rapides orientes valeur",
+      "Preprocessing & feature engineering",
+      "Rapid PoCs focused on outcomes",
     ],
   },
 ];
 
 const projects = [
   {
-    title: "Sofrecom Tunisie - Detection de cyberattaques IIoT",
-    period: "02/2025 - 08/2025",
-    location: "Sfax, Tunisie",
-    tags: ["IA", "Cybersecurite", "Django", "Dashboards"],
+    title: "Sofrecom Tunisia — IIoT Cyberattack Detection",
+    period: "02/2025 – 08/2025",
+    location: "Sfax, Tunisia",
+    tags: ["AI", "Cybersecurity", "Django", "Dashboards"],
     points: [
-      "Capture et simulation de trafic normal/DoS (Scapy, hping3)",
-      "Pretraitement + pipeline d'ingerstion pour l'autoML",
-      "Modeles supervises (XGBoost, RF, LSTM)",
-      "Interface web avec tableau de bord temps reel",
+      "Captured & simulated normal/DoS traffic (Scapy, hping3)",
+      "Preprocessing + ingestion pipeline for AutoML",
+      "Supervised models (XGBoost, RF, LSTM)",
+      "Web UI with real-time dashboard",
     ],
   },
   {
-    title: "Spark-IT - Datawarehouse & KPIs",
-    period: "06/2024 - 08/2024",
-    location: "Sfax, Tunisie",
+    title: "Spark-IT — Data Warehouse & KPIs",
+    period: "06/2024 – 08/2024",
+    location: "Sfax, Tunisia",
     tags: ["ETL", "SSIS", "Power BI", "Data Warehouse"],
     points: [
-      "ETL robustes (SSIS) depuis AdventureWorks2012",
-      "Entrepot de donnees + modele en etoile",
-      "Tableau de bord Power BI (KPIs ventes/finance)",
+      "Robust ETL (SSIS) from AdventureWorks2012",
+      "Data warehouse + star schema",
+      "Power BI dashboards (sales/finance KPIs)",
     ],
   },
 ];
@@ -69,9 +75,15 @@ const skills = {
   Dev: ["Django", "Python", "HTML5", "CSS3", "JavaScript"],
   Data: ["SQL", "Power BI", "SSIS", "ETL", "DAX", "MDX"],
   Sec: ["Scapy", "hping3", "DoS / TCP SYN"],
-  ML: ["XGBoost", "Random Forest", "Decision Tree", "ADA Boost", "LSTM", "BPNN"],
+  ML: ["XGBoost", "Random Forest", "Decision Tree", "AdaBoost", "LSTM", "BPNN"],
   Method: ["Agile/Scrum", "CRISP-DM"],
-  Lang: ["Francais (C1-C2)", "Anglais (C1-C2)"],
+  // Language levels per your request:
+  Lang: [
+    "Arabic (C2)",
+    "English (B–C1)",
+    "French (B–C1)",
+    "Spanish (A2–B1)",
+  ],
 };
 
 const Chips = ({ items }) => (
@@ -79,7 +91,7 @@ const Chips = ({ items }) => (
     {items.map((t) => (
       <span
         key={t}
-        className="px-3 py-1 rounded-full border border-zinc-300 text-sm bg-white/60 backdrop-blur"
+        className="px-3 py-1 rounded-full border bg-white text-[#14213d] border-[#e5e5e5] text-sm"
       >
         {t}
       </span>
@@ -87,26 +99,28 @@ const Chips = ({ items }) => (
   </div>
 );
 
+/* ---------- UI ---------- */
+
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-zinc-100 text-zinc-900">
+    <div className="min-h-screen bg-[#ffffff] text-[#14213d]">
       {/* Header */}
-      <header className="sticky top-0 z-20 bg-white/70 backdrop-blur border-b border-zinc-200">
+      <header className="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-[#e5e5e5]">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <a href="#home" className="font-semibold text-lg tracking-tight">
             Fahd Trigui
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a className="hover:opacity-80" href="#services">Services</a>
-            <a className="hover:opacity-80" href="#projects">Projets</a>
-            <a className="hover:opacity-80" href="#skills">Competences</a>
-            <a className="hover:opacity-80" href="#contact">Contact</a>
+            <a className="hover:text-[#fca311]" href="#services">Services</a>
+            <a className="hover:text-[#fca311]" href="#projects">Projects</a>
+            <a className="hover:text-[#fca311]" href="#skills">Skills</a>
+            <a className="hover:text-[#fca311]" href="#contact">Contact</a>
           </nav>
           <a
-            href="mailto:triguifahd@gmail.com"
-            className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm hover:shadow"
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-xl border border-[#e5e5e5] bg-white px-4 py-2 text-sm hover:bg-[#fca311] hover:text-black transition"
           >
-            Me contacter
+            Contact me
           </a>
         </div>
       </header>
@@ -115,57 +129,64 @@ export default function Portfolio() {
       <section id="home" className="relative">
         <div className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-green-300 bg-green-50 px-3 py-1 text-xs text-green-700">
-              Disponible pour missions freelance
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e5] bg-[#e5e5e5] px-3 py-1 text-xs text-[#14213d]">
+              Available for freelance projects
             </div>
             <h1 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
-              Developpeur Web & Data Analyst <span className="text-zinc-500">freelance</span>
+              Web Developer & Data Analyst <span className="text-[#fca311]">freelancer</span>
             </h1>
-            <p className="mt-4 text-zinc-600 max-w-prose">
-              J'aide les PME a creer des sites modernes, a visualiser leurs donnees avec des tableaux de bord clairs,
-              et a ameliorer la securite de leurs systemes.
+            <p className="mt-4 text-[#14213d]/80 max-w-prose">
+              I help SMEs build modern websites, visualize their data with clear dashboards,
+              and improve the security of their systems.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#services" className="rounded-xl bg-black text-white px-5 py-3 text-sm hover:opacity-90">
-                Voir les services
-              </a>
-              <a href="#projects" className="rounded-xl border border-zinc-300 bg-white px-5 py-3 text-sm hover:shadow">
-                Decouvrir les projets
-              </a>
-              {/* Download CV button */}
               <a
-                  href={`${import.meta.env.BASE_URL}CV_Fahd_Trigui.pdf`}
-                  download
-                  className="rounded-xl bg-green-600 text-white px-5 py-3 text-sm hover:bg-green-700"
-                >
-                  Télécharger CV
-                </a>
-
+                href="#services"
+                className="rounded-xl bg-[#14213d] text-white px-5 py-3 text-sm hover:bg-black transition"
+              >
+                View services
+              </a>
+              <a
+                href="#projects"
+                className="rounded-xl border border-[#e5e5e5] bg-white px-5 py-3 text-sm hover:bg-[#e5e5e5] transition"
+              >
+                See projects
+              </a>
+              {/* Download CV */}
+              <a
+                href={`${import.meta.env.BASE_URL}CV_Fahd_Trigui.pdf`}
+                download
+                className="rounded-xl bg-[#fca311] text-black px-5 py-3 text-sm hover:bg-[#f7b63c] transition"
+              >
+                Download CV
+              </a>
             </div>
-            <div className="mt-6 text-sm text-zinc-500">
-              Base a Sfax, Tunisie · Disponible a distance
+            <div className="mt-6 text-sm text-[#14213d]/70">
+              Based in Sfax, Tunisia · Open to remote
             </div>
           </div>
           <div className="md:justify-self-end">
-            {/* you can add an image here later */}
+            {/* Add a hero image or illustration later if you like */}
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section id="services" className="py-14 border-t border-zinc-200 bg-white/60">
+      <section id="services" className="py-14 border-t border-[#e5e5e5] bg-[#ffffff]">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl font-semibold">Services</h2>
-          <p className="mt-2 text-zinc-600 max-w-2xl">Des offres claires, livrables concrets et delais maitrises.</p>
+          <p className="mt-2 text-[#14213d]/80 max-w-2xl">
+            Clear offers, concrete deliverables, and controlled timelines.
+          </p>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {services.map((s) => (
               <article
                 key={s.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.05)]"
+                className="rounded-2xl border border-[#e5e5e5] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)]"
               >
                 <h3 className="font-medium">{s.title}</h3>
-                <p className="mt-2 text-sm text-zinc-600">{s.desc}</p>
-                <ul className="mt-4 space-y-1 text-sm text-zinc-700 list-disc list-inside">
+                <p className="mt-2 text-sm text-[#14213d]/80">{s.desc}</p>
+                <ul className="mt-4 space-y-1 text-sm text-[#14213d] list-disc list-inside">
                   {s.bullets.map((b) => (
                     <li key={b}>{b}</li>
                   ))}
@@ -179,21 +200,21 @@ export default function Portfolio() {
       {/* Projects */}
       <section id="projects" className="py-14">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl font-semibold">Projets</h2>
-          <p className="mt-2 text-zinc-600 max-w-2xl">
-            Selection de missions et travaux pertinents pour vos besoins.
+          <h2 className="text-2xl font-semibold">Projects</h2>
+          <p className="mt-2 text-[#14213d]/80 max-w-2xl">
+            Selected work aligned with common business needs.
           </p>
           <div className="mt-8 grid md:grid-cols-2 gap-4">
             {projects.map((p) => (
-              <article key={p.title} className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
+              <article key={p.title} className="rounded-2xl border border-[#e5e5e5] bg-white p-6 shadow-sm">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-lg font-medium leading-tight">{p.title}</h3>
-                  <span className="text-xs px-2 py-1 rounded-full bg-zinc-100 border border-zinc-200">
+                  <span className="text-xs px-2 py-1 rounded-full bg-[#e5e5e5] border border-[#e5e5e5]">
                     {p.period}
                   </span>
                 </div>
-                <div className="mt-1 text-sm text-zinc-500">{p.location}</div>
-                <div className="mt-4 space-y-1 text-sm text-zinc-700">
+                <div className="mt-1 text-sm text-[#14213d]/70">{p.location}</div>
+                <div className="mt-4 space-y-1 text-sm text-[#14213d]">
                   {p.points.map((pt) => (
                     <div key={pt}>• {pt}</div>
                   ))}
@@ -208,41 +229,28 @@ export default function Portfolio() {
       </section>
 
       {/* Skills */}
-      <section id="skills" className="py-14 border-t border-zinc-200 bg-white/60">
+      <section id="skills" className="py-14 border-t border-[#e5e5e5] bg-[#ffffff]">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl font-semibold">Competences</h2>
+          <h2 className="text-2xl font-semibold">Skills</h2>
           <div className="mt-8 grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-              <h3 className="font-medium">Developpement</h3>
-              <div className="mt-3">
-                <Chips items={skills.Dev} />
-              </div>
+            <div className="rounded-2xl border border-[#e5e5e5] bg-white p-6 shadow-sm">
+              <h3 className="font-medium">Development</h3>
+              <div className="mt-3"><Chips items={skills.Dev} /></div>
               <h3 className="mt-6 font-medium">Data</h3>
-              <div className="mt-3">
-                <Chips items={skills.Data} />
-              </div>
-              <h3 className="mt-6 font-medium">Cybersecurite</h3>
-              <div className="mt-3">
-                <Chips items={skills.Sec} />
-              </div>
+              <div className="mt-3"><Chips items={skills.Data} /></div>
+              <h3 className="mt-6 font-medium">Cybersecurity</h3>
+              <div className="mt-3"><Chips items={skills.Sec} /></div>
             </div>
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
+
+            <div className="rounded-2xl border border-[#e5e5e5] bg-white p-6 shadow-sm">
               <h3 className="font-medium">Machine Learning</h3>
-              <div className="mt-3">
-                <Chips items={skills.ML} />
-              </div>
-              <h3 className="mt-6 font-medium">Methodologies</h3>
-              <div className="mt-3">
-                <Chips items={skills.Method} />
-              </div>
-              <h3 className="mt-6 font-medium">Langues</h3>
-              <div className="mt-3">
-                <Chips items={skills.Lang} />
-              </div>
+              <div className="mt-3"><Chips items={skills.ML} /></div>
+              <h3 className="mt-6 font-medium">Methods</h3>
+              <div className="mt-3"><Chips items={skills.Method} /></div>
+              <h3 className="mt-6 font-medium">Languages</h3>
+              <div className="mt-3"><Chips items={skills.Lang} /></div>
               <h3 className="mt-6 font-medium">Certifications</h3>
-              <div className="mt-3">
-                <Chips items={["IBM SkillsBuild - AI Fundamentals"]} />
-              </div>
+              <div className="mt-3"><Chips items={["IBM SkillsBuild — AI Fundamentals"]} /></div>
             </div>
           </div>
         </div>
@@ -251,35 +259,52 @@ export default function Portfolio() {
       {/* Contact */}
       <section id="contact" className="py-14">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold">Parlons de votre projet</h2>
-            <p className="mt-2 text-zinc-600 max-w-prose">
-              Expliquez-moi votre besoin (site, dashboard, securite, IA). Je reviens vers vous rapidement
-              avec un plan simple, un delai et un budget clair.
+          <div className="rounded-2xl border border-[#e5e5e5] bg-white p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold">Let’s talk about your project</h2>
+            <p className="mt-2 text-[#14213d]/80 max-w-prose">
+              Tell me what you need (website, dashboard, security, AI). I’ll reply with a simple plan,
+              a timeline, and a clear budget.
             </p>
             <div className="mt-6 grid sm:grid-cols-3 gap-3 text-sm">
-              <a href="mailto:triguifahd@gmail.com" className="rounded-xl bg-zinc-900 text-white px-5 py-3 text-center hover:opacity-90">
+              <a
+                href="mailto:triguifahd@gmail.com"
+                className="rounded-xl bg-[#14213d] text-white px-5 py-3 text-center hover:bg-black transition"
+              >
                 Email
               </a>
-              <a href="https://wa.me/21656129988" target="_blank" rel="noreferrer" className="rounded-xl border border-zinc-300 bg-white px-5 py-3 text-center hover:shadow">
+              <a
+                href="https://wa.me/21656129988"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-xl border border-[#e5e5e5] bg-white px-5 py-3 text-center hover:bg-[#e5e5e5] transition"
+              >
                 WhatsApp
               </a>
-              <a href="https://linkedin.com/in/fahd-trigui-512799252" target="_blank" rel="noreferrer" className="rounded-xl border border-zinc-300 bg-white px-5 py-3 text-center hover:shadow">
+              <a
+                href="https://linkedin.com/in/fahd-trigui-512799252"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-xl border border-[#e5e5e5] bg-white px-5 py-3 text-center hover:bg-[#e5e5e5] transition"
+              >
                 LinkedIn
               </a>
             </div>
-            <p className="mt-4 text-xs text-zinc-500">Sfax · Tunis · Remote (EU/US friendly)</p>
+            <p className="mt-4 text-xs text-[#14213d]/60">
+              Sfax · Tunis · Remote (EU/US friendly)
+            </p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-zinc-200 text-sm text-zinc-500">
+      <footer className="py-8 border-t border-[#e5e5e5] text-sm text-[#14213d]/70">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
-          <div>© {new Date().getFullYear()} Fahd Trigui. Tous droits reserves.</div>
+          <div>© {new Date().getFullYear()} Fahd Trigui. All rights reserved.</div>
           <div className="flex items-center gap-4">
-            <a className="hover:opacity-80" href="#home">Haut de page</a>
-            <a className="hover:opacity-80" href="mailto:triguifahd@gmail.com">triguifahd@gmail.com</a>
+            <a className="hover:text-[#fca311]" href="#home">Back to top</a>
+            <a className="hover:text-[#fca311]" href="mailto:triguifahd@gmail.com">
+              triguifahd@gmail.com
+            </a>
           </div>
         </div>
       </footer>
