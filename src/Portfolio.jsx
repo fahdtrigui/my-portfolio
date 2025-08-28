@@ -270,18 +270,140 @@ export default function Portfolio() {
               Tell me about your needs (website, dashboard, security, AI). I'll get back to you quickly
               with a simple plan, timeline and clear budget.
             </p>
-            <div className="mt-6 grid sm:grid-cols-3 gap-3 text-sm">
-              <a href="mailto:triguifahd@gmail.com" className="rounded-xl px-5 py-3 text-center hover:opacity-90 transition-opacity" style={{ backgroundColor: '#14213d', color: '#ffffff' }}>
-                Email
-              </a>
-              <a href="https://wa.me/21656129988" target="_blank" rel="noreferrer" className="rounded-xl px-5 py-3 text-center hover:opacity-90 transition-opacity" style={{ backgroundColor: '#fca311', color: '#ffffff' }}>
-                WhatsApp
-              </a>
-              <a href="https://linkedin.com/in/fahd-trigui-512799252" target="_blank" rel="noreferrer" className="rounded-xl px-5 py-3 text-center hover:opacity-90 transition-opacity" style={{ backgroundColor: '#ffffff', color: '#14213d', border: '1px solid #e5e5e5' }}>
-                LinkedIn
-              </a>
+            
+            {/* Contact Form */}
+            <div className="mt-8 grid md:grid-cols-2 gap-8">
+              <form className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-1" style={{ color: '#14213d' }}>
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2"
+                    style={{
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e5e5e5',
+                      color: '#14213d',
+                      focusRingColor: '#fca311'
+                    }}
+                    placeholder="Your full name"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-1" style={{ color: '#14213d' }}>
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2"
+                    style={{
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e5e5e5',
+                      color: '#14213d'
+                    }}
+                    placeholder="your@email.com"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="project" className="block text-sm font-medium mb-1" style={{ color: '#14213d' }}>
+                    Project Type
+                  </label>
+                  <select
+                    id="project"
+                    name="project"
+                    className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2"
+                    style={{
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e5e5e5',
+                      color: '#14213d'
+                    }}
+                  >
+                    <option value="">Select a service</option>
+                    <option value="website">Website & Apps</option>
+                    <option value="dashboard">Dashboards & Data</option>
+                    <option value="security">Cybersecurity</option>
+                    <option value="ai">Applied AI</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-1" style={{ color: '#14213d' }}>
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={4}
+                    className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 resize-vertical"
+                    style={{
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e5e5e5',
+                      color: '#14213d'
+                    }}
+                    placeholder="Tell me about your project, timeline, and budget if you have one in mind..."
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: '#fca311', color: '#ffffff' }}
+                >
+                  Send Message
+                </button>
+              </form>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-medium mb-3" style={{ color: '#14213d' }}>Prefer Direct Contact?</h3>
+                  <div className="space-y-3">
+                    <a href="mailto:triguifahd@gmail.com" className="flex items-center gap-3 p-3 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#e5e5e5', color: '#14213d' }}>
+                      <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm" style={{ backgroundColor: '#14213d', color: '#ffffff' }}>✉</span>
+                      <div>
+                        <div className="font-medium">Email</div>
+                        <div className="text-sm opacity-80">triguifahd@gmail.com</div>
+                      </div>
+                    </a>
+                    
+                    <a href="https://wa.me/21656129988" target="_blank" rel="noreferrer" className="flex items-center gap-3 p-3 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#e5e5e5', color: '#14213d' }}>
+                      <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm" style={{ backgroundColor: '#fca311', color: '#ffffff' }}>📱</span>
+                      <div>
+                        <div className="font-medium">WhatsApp</div>
+                        <div className="text-sm opacity-80">+216 56 129 988</div>
+                      </div>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/fahd-trigui-512799252" target="_blank" rel="noreferrer" className="flex items-center gap-3 p-3 rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: '#e5e5e5', color: '#14213d' }}>
+                      <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm" style={{ backgroundColor: '#14213d', color: '#ffffff' }}>in</span>
+                      <div>
+                        <div className="font-medium">LinkedIn</div>
+                        <div className="text-sm opacity-80">Professional Profile</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="p-4 rounded-lg" style={{ backgroundColor: '#e5e5e5' }}>
+                  <h4 className="font-medium mb-2" style={{ color: '#14213d' }}>Response Time</h4>
+                  <p className="text-sm" style={{ color: '#000000' }}>I typically respond within 24 hours on weekdays. For urgent projects, WhatsApp is fastest.</p>
+                </div>
+                
+                <div className="text-xs" style={{ color: '#000000' }}>
+                  📍 Sfax · Tunis · Remote (EU/US friendly)
+                </div>
+              </div>
             </div>
-            <p className="mt-4 text-xs" style={{ color: '#000000' }}>Sfax · Tunis · Remote (EU/US friendly)</p>
           </div>
         </div>
       </section>
